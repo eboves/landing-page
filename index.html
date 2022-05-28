@@ -12,15 +12,31 @@
     />
     <!-- Load Styles -->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <script
+      src="https://kit.fontawesome.com/73313b4c16.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
-    <header class="page__header">
+    <header class="page__header nav-open">
       <nav class="navbar__menu">
         <!-- Navigation starts as empty UL that will be populated with JS -->
-        <ul id="navbar__list"></ul>
+        <ul id="navbar__list" class="nav_ul"></ul>
       </nav>
+      <button class="btn-nav">
+        <i
+          class="nav-icons phone-icon-nav fa-solid fa-bars"
+          name="menu-outline"
+        ></i>
+        <i
+          class="nav-icons phone-icon-nav fa-solid fa-xmark"
+          name="close-outline"
+        >
+        </i>
+      </button>
     </header>
     <main>
       <header class="main__hero">
