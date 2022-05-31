@@ -20,6 +20,7 @@ body {
   margin: 0;
   font-family: "Merriweather", serif;
   color: #fff;
+  box-sizing: border-box;
 }
 
 /* Typeography General*/
@@ -80,10 +81,10 @@ section {
   text-decoration: none;
 }
 
-.menu__link {
+/* .menu__link {
   font-weight: bold;
   transition: all 0.3s all;
-}
+} */
 
 .btn-nav {
   font-size: 1.2rem;
@@ -224,6 +225,16 @@ section.your-active-class {
     rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+.active {
+  padding: 5px 10px;
+  background-color: #590085;
+  transition: 0.3ms ease background-color;
+}
+
+.active a {
+  color: #fff;
 }
 
 section.your-active-class .landing__container::before {
