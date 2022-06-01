@@ -12,12 +12,14 @@
  * JS Standard: ESlint
  *
  */
-
+///////////////////////////////////////////////////
 // TODO:
 // add dynamically li
 // add class 1st child
 
 // remove your-active-class
+
+////////////////////////////////////////////////
 
 // Variables
 let nav_item_list = [
@@ -46,10 +48,16 @@ window.addEventListener("scroll", function () {
   sections.forEach((section) => {
     const section_top = section.offsetTop;
 
-    section.classList.remove("your-active-class");
+    // section.classList.remove("your-active-class");
     if (this.scrollY >= section_top - 250) {
       current_section = section.getAttribute("id");
       section.classList.add("your-active-class");
+    }
+    if (
+      section.getBoundingClientRect().bottom < 250 ||
+      section.getBoundingClientRect().top > this.window.innerHeight
+    ) {
+      section.classList.remove("your-active-class");
     }
   });
   document.querySelectorAll("li").forEach((li) => {
@@ -68,6 +76,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth",
     });
+    header_el.classList.remove("nav-open");
   });
 });
 
