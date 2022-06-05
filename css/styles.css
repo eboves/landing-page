@@ -227,6 +227,10 @@ section.your-active-class {
   );
 }
 
+/***************************************************/
+/*                    MY CODE                      */
+/***************************************************/
+
 .active {
   padding: 5px 10px;
   background-color: #590085;
@@ -236,6 +240,27 @@ section.your-active-class {
 .active a {
   color: #fff;
 }
+
+.btn {
+  position: absolute;
+  border: none;
+  font-size: 24px;
+  border-radius: 5px;
+  width: 75px;
+  color: #590085;
+  right: 50px;
+  padding: 5px 10px;
+  background-color: white;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #590085;
+  color: white;
+}
+
+/***************************************************/
+/*                    MY CODE                      */
+/***************************************************/
 
 section.your-active-class .landing__container::before {
   opacity: 1;
