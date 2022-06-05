@@ -21,16 +21,6 @@
 
 ////////////////////////////////////////////////
 
-// Variables
-let nav_item_list = [
-  "Section 1",
-  "Section 2",
-  "Section 3",
-  "Section 4",
-  "Section 5",
-];
-let nav_id_list = ["section1", "section2", "section3", "section4", "section5"];
-
 const nav_bar_list = document.getElementById("navbar__list");
 const btn_nav_el = document.querySelector(".btn-nav");
 const header_el = document.querySelector(".page__header");
@@ -39,33 +29,55 @@ const nav_list = document.querySelectorAll("li");
 
 //this code creates the dynamic ul with a class as well as the href
 //with the id of each section
-for (let i = 0; i < nav_item_list.length; i++) {
-  nav_bar_list.innerHTML += `<li class="menu__link ${nav_id_list[i]} active"><a class="links" href="#${nav_id_list[i]}">${nav_item_list[i]}</a></li>`;
-}
 
-window.addEventListener("scroll", function () {
-  let current_section = "";
+// This function creates a nav based on the section you add in the HTML.
+// Keep in mind that when adding a new section most add the id and the data-nav.
+function gen_nav_list() {
   sections.forEach((section) => {
-    const section_top = section.offsetTop;
-
-    // section.classList.remove("your-active-class");
-    if (this.scrollY >= section_top - 250) {
-      current_section = section.getAttribute("id");
-      section.classList.add("your-active-class");
-    }
-    if (
-      section.getBoundingClientRect().bottom < 250 ||
-      section.getBoundingClientRect().top > this.window.innerHeight
-    ) {
-      section.classList.remove("your-active-class");
-    }
+    nav_bar_list.innerHTML += `<li class="menu__link ${section.id} active"><a class="links" href="#${section.id}">${section.dataset.nav}</a></li>`;
   });
+}
+// calling the gen_nav_list function
+gen_nav_list();
+
+// This function highlights the nav every time a new section is on the viewport
+function nav_highlighting(current_section) {
   document.querySelectorAll("li").forEach((li) => {
     li.classList.remove("active");
     if (li.classList.contains(current_section)) {
       li.classList.add("active");
     }
   });
+}
+// This function add or remove the your-active-class
+// if the section is on the viewport. If the top of the section,
+// is the top of the section is less than the windows innerHeight,
+// it will add it. Else, it will remove it
+function active_class() {
+  sections.forEach((section) => {
+    if (section.getBoundingClientRect().top < this.window.innerHeight / 2) {
+      section.classList.add("your-active-class");
+      current_section = section.getAttribute("id");
+    }
+    if (
+      section.getBoundingClientRect().bottom < this.window.innerHeight / 2 ||
+      section.getBoundingClientRect().top > this.window.innerHeight ||
+      section.getBoundingClientRect().top > this.window.innerHeight ||
+      section.getBoundingClientRect().top < 0
+    ) {
+      section.classList.remove("your-active-class");
+    }
+  });
+}
+
+// function smooth_scroll(){}
+window.addEventListener("scroll", function () {
+  let current_section = "";
+
+  //calling the active_class function
+  active_class();
+  //calling the nav_highlighting function
+  nav_highlighting(current_section);
 });
 
 // This code select all the a tags and make a smooth scrolling motion
