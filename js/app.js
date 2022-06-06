@@ -117,6 +117,7 @@ window.addEventListener("scroll", function () {
 
   //calling the nav_highlighting function
   nav_highlighting(current_section);
+  disableScrolling();
 });
 
 // This code opens/closes the nav bar on smaller divices
