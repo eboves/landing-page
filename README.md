@@ -2,18 +2,18 @@
 
 ## Table of Contents
 
-1.
+1. [Dynamic Nav](#dynamic_nav)
 
 - [Instructions](#instructions)
 
 ## Instructions
 
-## Project Description
+## Project Description and Funtionality
 
 This project is about DOM manipulation. Using different methods to change the behavior and and funtionality of the webpage based on,
 wheather or not a section is in the viewport.
 
-1. Dynamical Nav
+1. Dynamic Nav
 
 In the code bellow we select all the sections and based on the id it has and on the dataset,
 a li with an a tag is created; using those parameters an setting id and classes with those attributes.
