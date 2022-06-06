@@ -7,11 +7,6 @@
 - [Scrolling](#scrolling)
 - [Button to top](#button-to-top)
 - [Active Class](#active-class)
--
-
-- [Instructions](#instructions)
-
-## Instructions
 
 ## Project Description and Funtionality
 
