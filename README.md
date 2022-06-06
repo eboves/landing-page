@@ -3,6 +3,7 @@
 ## Table of Contents
 
 1. [DynamicNav](#dynamicNav)
+- [`Dynamic Nav`](#dynamicnav)
 
 - [Instructions](#instructions)
 
