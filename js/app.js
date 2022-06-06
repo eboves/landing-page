@@ -15,8 +15,6 @@
 ///////////////////////////////////////////////////
 // TODO:
 
-// remove your-active-class
-
 ////////////////////////////////////////////////
 
 const nav_bar_list = document.getElementById("navbar__list");
@@ -97,9 +95,6 @@ function section_click() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      // document.querySelector(this.getAttribute("href")).scrollIntoView({
-      //   behavior: "smooth",
-      // });
       smooth_scrolling(anchor);
       header_el.classList.remove("nav-open");
     });
@@ -111,7 +106,7 @@ section_click();
 // This call to the window object when scrolling calls the active_class
 // and the nav_highlighting functions
 window.addEventListener("scroll", function () {
-  // holding the value return when calling active class to pass it as
+  // This variable holds the value return when calling active class to pass it as
   // argument to nav_highlighting
   let current_section = active_class();
 
